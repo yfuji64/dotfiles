@@ -30,6 +30,8 @@ set laststatus=2
 " 折り返し時に表示行単位で移動できるようにする
 nnoremap j gj
 nnoremap k gk
+" カラースキーム
+colorscheme iceberg
 " シンタックスハイライトの有効化
 syntax enable
 
