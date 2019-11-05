@@ -21,3 +21,4 @@ setopt hist_ignore_all_dups
 setopt interactive_comments
 setopt auto_cd
 
+export PATH="/usr/local/sbin:$PATH"
