@@ -13,10 +13,6 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  
 zstyle ':completion:*:default' menu select=1
 
-# alias
-alias ltph2-01='ssh -XC -l ltph2 10.33.200,119'
-alias ltph2-02='ssh -XC -l ltph2 10.33.200.120'
-
 # その他のオプション
 bindkey "^[u" undo
 bindkey "^[r" redo
