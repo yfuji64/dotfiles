@@ -5,7 +5,7 @@ autoload colors && colors
 # プロンプト pure使いたい
 KET=$'\U232A'
 PROMPT='
-%F{111}[%~]%f
+%F{111}[%~]%f %F{243}%D %*%f
 > '
 
 # 補完
