@@ -56,3 +56,25 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" neobundle
+set nocompatible
+filetype off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+"" Install
+call neobundle#begin(expand('~/.vim/bundle/'))
+    NeoBundle 'cohama/lexima.vim'
+call neobundle#end()
+
+filetype plugin indent on
+
+"" Installation check
+if neobundle#exists_not_installed_bundles()
+  echomsg 'Not installed bundles : ' .
+    \ string(neobundle#get_not_installed_bundle_names())
+  echomsg 'Please execute ":NeoBundleInstall" command.'
+endif
