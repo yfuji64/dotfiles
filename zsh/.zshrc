@@ -8,9 +8,6 @@ PROMPT='
 %F{111}[%~]%f %F{243}%D %*%f
 > '
 
-# bindkey
-bindkey -v
-
 # 補完
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  
@@ -24,4 +21,3 @@ setopt hist_ignore_all_dups
 setopt interactive_comments
 setopt auto_cd
 
-export PATH="/usr/local/sbin:$PATH"
