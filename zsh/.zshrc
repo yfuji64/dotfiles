@@ -8,7 +8,7 @@ PROMPT='
 %F{111}[%~]%f %F{243}%D %*%f
 > '
 
-# 補完
+# completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  
 zstyle ':completion:*:default' menu select=1
@@ -17,15 +17,26 @@ zstyle ':completion:*:default' menu select=1
 bindkey "^[u" undo
 bindkey "^[r" redo
 
-# cd系
+# cd
 setopt auto_cd
+DIRSTACKSIZE=20
+setopt auto_pushd
+setopt pushd_ignore_dups
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# その他
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt print_eight_bit
+# history
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=100000
+function history-all { history -E 1 }
 setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_no_store
+setopt hist_reduce_blanks
+setopt hist_verify  # able to edit before running
+
+# others
+setopt print_eight_bit
 setopt interactive_comments
 WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
