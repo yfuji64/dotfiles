@@ -40,3 +40,4 @@ setopt hist_verify  # able to edit before running
 setopt print_eight_bit
 setopt interactive_comments
 WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
+alias ls="ls -GF"
