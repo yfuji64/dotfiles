@@ -11,18 +11,20 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
+" クリップボードを共有する
+set clipboard=unnamed
+" マウスが使える
+set mouse=a
 
 " 見た目系
 " 行番号を表示
-set number
+set relativenumber
 " 現在の行を強調表示
 set cursorline
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
 set smartindent
-" ビープ音を可視化
-set visualbell
 " 括弧入力時の対応する括弧を表示
 set showmatch
 " ステータスラインを常に表示
@@ -30,8 +32,6 @@ set laststatus=2
 " 折り返し時に表示行単位で移動できるようにする
 nnoremap j gj
 nnoremap k gk
-" カラースキーム
-colorscheme iceberg
 " シンタックスハイライトの有効化
 syntax enable
 
@@ -41,7 +41,7 @@ set expandtab
 " 行頭以外のTab文字の表示幅
 set tabstop=4
 " 行頭でのTab文字の表示幅
-set shiftwidth=2
+set shiftwidth=4
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
@@ -57,6 +57,10 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" カラースキーム
+autocmd ColorScheme * highlight Visual ctermbg=239 guibg=#272c42
+colorscheme iceberg
+
 " neobundle
 set nocompatible
 filetype off
@@ -68,6 +72,8 @@ endif
 "" Install
 call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'cohama/lexima.vim'
+    NeoBundle 'itchyny/lightline.vim'
+    NeoBundle 'cocopon/iceberg.vim'
 call neobundle#end()
 
 filetype plugin indent on
@@ -78,3 +84,8 @@ if neobundle#exists_not_installed_bundles()
     \ string(neobundle#get_not_installed_bundle_names())
   echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
+
+" lightline
+let g:lightline = {
+    \ 'colorscheme': 'wombat'
+    \ }

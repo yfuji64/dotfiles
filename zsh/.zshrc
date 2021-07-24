@@ -41,3 +41,4 @@ setopt print_eight_bit
 setopt interactive_comments
 WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
 alias ls="ls -GF"
+alias pbtime="date '+%F %H:%M' | pbcopy"
