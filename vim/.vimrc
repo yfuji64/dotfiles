@@ -9,8 +9,6 @@ set noswapfile
 set autoread
 " バッファが編集中でもその他のファイルを開けるように
 set hidden
-" 入力中のコマンドをステータスに表示する
-set showcmd
 " クリップボードを共有する
 set clipboard=unnamed
 " マウスが使える
@@ -89,3 +87,6 @@ endif
 let g:lightline = {
     \ 'colorscheme': 'wombat'
     \ }
+
+" 入力中のコマンドを表示
+set showcmd
