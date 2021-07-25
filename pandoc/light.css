@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif;
     line-height: 150%;
+    font-size: 140%;
 }
 
 h1 {
@@ -11,6 +12,7 @@ h2, h3, h4 {
     padding-bottom; 0.2em;
     border-bottom: 1px solid #e0e0e0;
 }
+
 pre {
     padding: 1em;
     border: 1px solid #e0e0e0;
@@ -18,3 +20,11 @@ pre {
     line-height: 120%;
 }
 
+figure {
+    text-align: center;
+}
+
+figcaption {
+    font-size: 70%;
+    color: gray;
+}

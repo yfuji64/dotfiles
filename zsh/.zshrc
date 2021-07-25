@@ -42,4 +42,4 @@ setopt interactive_comments
 WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
 alias ls="ls -GF"
 alias pbtime="date '+%F %H:%M' | pbcopy"
-alias pandocmd="(){pandoc $1 -f markdown -t html5}"
+alias pandocmd="(){pandoc $1 -f markdown -t html5 -c ~/dotfiles/pandoc/light.css -o main.pdf}"
