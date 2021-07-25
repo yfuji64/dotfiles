@@ -2,5 +2,25 @@
 
 #https://adbird.hatenablog.com/entry/2016/12/20/024747
 
-pandoc $1 -s -f markdown -t html5 -c ~/dotfiles/pandoc/light.css -o tmp.html
-wkhtmltopdf --enable-local-file-access --margin-top 20 --margin-left 25 --margin-right 25 --margin-bottom 20 --footer-center '[page]/[topage]' tmp.html main.pdf
+#うまくいっていない
+# FLG_O=false
+# 
+# while getopts ho OPT
+# do
+#     case $OPT in
+#         h ) FLG_H=true ;;
+#         o ) FLG_O=true;VAL_O=$outputname;
+#     esac
+# done
+
+inputname=$1
+filename=${inputname%.*}
+
+# if "${FLG_O}"; then
+#     filename=${outputname%.*}
+# else
+#     filename=${inputname%.*}
+# fi
+
+pandoc $1 -s -f markdown -t html5 -c ~/dotfiles/pandoc/light.css -o ${filename}.html
+wkhtmltopdf --enable-local-file-access --margin-top 20 --margin-left 25 --margin-right 25 --margin-bottom 20 --footer-center '[page]/[topage]' ${filename}.html ${filename}.pdf
