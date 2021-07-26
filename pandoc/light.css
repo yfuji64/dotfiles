@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     line-height: 150%;
-    font-size: 140%;
+    font-size: 150%;
 }
 
 h1 {
@@ -18,6 +18,11 @@ pre {
     border: 1px solid #e0e0e0;
     background-color: #edf0ef;
     line-height: 120%;
+}
+
+code {
+    font-family: "源ノ角ゴシック Code JP";
+    font-size: 70%;
 }
 
 figure {
